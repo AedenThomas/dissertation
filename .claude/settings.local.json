@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(npm run start:dev:*)",
+      "Bash(docker-compose:*)",
+      "Bash(curl:*)",
+      "Bash(node:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "timestamp": 1754918625662,
+    "totalTests": 0,
+    "config": {
+      "architectures": [
+        "P2P",
+        "SFU"
+      ],
+      "numViewers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        15
+      ],
+      "packetLossRates": [
+        0,
+        0.01,
+        0.02,
+        0.05,
+        0.1
+      ],
+      "bandwidthLimits": [
+        "5mbit",
+        "2mbit",
+        "1mbit"
+      ],
+      "testDuration": 60000,
+      "warmupTime": 5000,
+      "cooldownTime": 3000,
+      "latencyMeasurementInterval": 500,
+      "screenshotInterval": 5000,
+      "cpuMeasurementInterval": 1000,
+      "clientUrl": "http://localhost:3000",
+      "testContentUrl": "http://localhost:3000/test-content.html",
+      "resultsDir": "./results",
+      "screenshotsDir": "./results/screenshots",
+      "browserSettings": {
+        "headless": true,
+        "args": [
+          "--no-sandbox",
+          "--disable-setuid-sandbox",
+          "--disable-dev-shm-usage",
+          "--disable-web-security",
+          "--allow-running-insecure-content",
+          "--use-fake-ui-for-media-stream",
+          "--use-fake-device-for-media-stream",
+          "--autoplay-policy=no-user-gesture-required"
+        ]
+      },
+      "groundTruthText": "class WebRTCScreenSharingSystem {\n    private peerConnections: Map<string, RTCPeerConnection>;\n    private localStream: MediaStream | null = null;\n    private signalingSocket: Socket;\n    \n    constructor(signalingServerUrl: string) {\n        this.peerConnections = new Map();\n        this.signalingSocket = io(signalingServerUrl);\n        this.setupSignalingListeners();\n    }\n    \n    async startScreenCapture(): Promise<void> {\n        try {\n            this.localStream = await navigator.mediaDevices.getDisplayMedia({\n                video: { \n                    contentHint: 'detail',\n                    width: { ideal: 1920 },\n                    height: { ideal: 1080 }\n                },\n                audio: false\n            });\n            \n            this.localStream.getVideoTracks()[0].addEventListener('ended', () => {\n                this.handleStreamEnded();\n            });\n            \n        } catch (error) {\n            console.error('Failed to capture screen:', error);\n            throw error;\n        }\n    }"
+    }
+  },
+  "results": []
+}
