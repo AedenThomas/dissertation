@@ -1,9 +1,9 @@
 module.exports = {
   // Test parameters
   architectures: ['P2P', 'SFU'],        // 2 options
-  numViewers: [1, 3, 5],       // 5 options (a good spread)
-  packetLossRates: [0],                 // 1 option
-  bandwidthLimits: ['5mbit'],           // 1 option   // <-- Reduced to ONE option
+  numViewers: [1, 5],       // 5 options (a good spread)
+  packetLossRates: [0, 0.05],                 // 1 option
+  bandwidthLimits: ['5mbit', '1mbit' ],           // 1 option   // <-- Reduced to ONE option
   
   // Test execution
   testDuration: 60000, // 60 seconds in milliseconds
@@ -34,6 +34,8 @@ module.exports = {
       '--allow-running-insecure-content',
       '--use-fake-ui-for-media-stream',
       '--use-fake-device-for-media-stream',
+      '--auto-select-desktop-capture-source=Entire screen',
+      '--enable-usermedia-screen-capturing',
       '--autoplay-policy=no-user-gesture-required',
       '--disable-background-timer-throttling',
       '--disable-backgrounding-occluded-windows',

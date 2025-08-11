@@ -1,3 +1,5 @@
+
+
 // +++++ START OF FINAL, CORRECTED useScreenSharing.ts +++++
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { WebRTCService } from '../services/webrtc';
@@ -17,12 +19,12 @@ export const useScreenSharing = (config: SessionConfig) => {
   const startSharing = useCallback(async () => {
     try {
       setError(null);
-      // Step 1: Get the local media stream first
+      // Step 1: Get the local media stream with correct constraints
       const stream = await navigator.mediaDevices.getDisplayMedia({
-        video: { contentHint: 'detail' } as MediaTrackConstraints, // <-- THE FIX
+        // THIS IS THE CRITICAL FIX:
+        video: { contentHint: 'detail' } as MediaTrackConstraints, 
         audio: false,
       });
-
 
       if (localVideoRef.current) {
         localVideoRef.current.srcObject = stream;
@@ -58,8 +60,7 @@ export const useScreenSharing = (config: SessionConfig) => {
   
   // For viewers, we need a way to connect without a local stream
   const joinSessionAsViewer = useCallback(() => {
-    // We pass a dummy stream for viewers, as they don't share
-    // This satisfies the new constructor signature.
+    // Pass a dummy stream for viewers.
     const webrtcService = new WebRTCService(config, new MediaStream());
     webrtcServiceRef.current = webrtcService;
 

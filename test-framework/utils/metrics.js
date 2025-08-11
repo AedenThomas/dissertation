@@ -29,64 +29,49 @@ class MetricsCollector {
     }
   }
 
-  async captureLatencyMetrics(page, role) {
+  async captureLatencyMetrics(presenterContentPage, viewerPages) {
     try {
-      if (role === 'presenter') {
-        // On the presenter, find the content page and change the pixel's color
-        const contentPage = (await page.browser().pages())[1]; // The content is the second tab
-        await contentPage.evaluate(() => {
-          const pixel = document.getElementById('latency-pixel');
-          if (pixel) {
-            const timestamp = Date.now();
-            const r = (timestamp >> 16) & 0xFF;
-            const g = (timestamp >> 8) & 0xFF;
-            const b = timestamp & 0xFF;
-            pixel.style.backgroundColor = `rgb(${r},${g},${b})`;
-          }
-        });
-        return { action: 'timestamp_encoded' };
-      } else {
-        // On the viewer, read the pixel color from the video stream
-        const metrics = await page.evaluate(() => {
+      await presenterContentPage.evaluate(() => {
+        const pixel = document.getElementById('latency-pixel');
+        if (pixel) {
+          const timestamp = Date.now();
+          const r = (timestamp >> 16) & 0xFF; const g = (timestamp >> 8) & 0xFF; const b = timestamp & 0xFF;
+          pixel.style.backgroundColor = `rgb(${r},${g},${b})`;
+        }
+      });
+
+      if (viewerPages.length > 0) {
+        const viewerPage = viewerPages[0];
+        const metrics = await viewerPage.evaluate(() => {
           const video = document.querySelector('video');
-          if (!video || video.readyState < video.HAVE_METADATA) return { latency: null };
+          if (!video || video.readyState < video.HAVE_METADATA || video.videoWidth === 0) return { latency: null };
 
           const canvas = document.createElement('canvas');
-          canvas.width = 4;
-          canvas.height = 4;
+          canvas.width = 4; canvas.height = 4;
           const ctx = canvas.getContext('2d', { willReadFrequently: true });
           ctx.drawImage(video, 0, 0, 4, 4);
           const imageData = ctx.getImageData(0, 0, 1, 1).data;
           
-          const r = imageData[0];
-          const g = imageData[1];
-          const b = imageData[2];
-
-          // Reconstruct the timestamp from the RGB values
-          // This must be done carefully to avoid floating point issues
+          const r = imageData[0]; const g = imageData[1]; const b = imageData[2];
           const decodedTimestamp = (r << 16) | (g << 8) | b;
           const now = Date.now();
           
-          // Basic sanity check on the timestamp
-          if (decodedTimestamp > now - 5000 && decodedTimestamp <= now) {
+          if (decodedTimestamp > now - 15000 && decodedTimestamp <= now) {
             return { latency: now - decodedTimestamp };
           }
           return { latency: null };
-        });
+        }).catch(() => ({ latency: null }));
         
         if (metrics && metrics.latency !== null) {
-          this.latencyMeasurements.push({
-            timestamp: Date.now(),
-            latency: metrics.latency
-          });
+          this.latencyMeasurements.push({ timestamp: Date.now(), latency: metrics.latency });
         }
-        return metrics;
       }
     } catch (error) {
-      // Don't log verbose errors, as this can fail occasionally
-      return { latency: null };
+      // Fail silently
     }
   }
+
+
 
   async captureScreenshotAndCalculateTLS(page, testId, screenshotIndex) {
     try {
