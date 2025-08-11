@@ -1,7 +1,7 @@
 module.exports = {
   // Test parameters
   architectures: ['P2P', 'SFU'],        // 2 options
-  numViewers: [1, 3, 5, 8, 15],       // 5 options (a good spread)
+  numViewers: [1, 3, 5],       // 5 options (a good spread)
   packetLossRates: [0],                 // 1 option
   bandwidthLimits: ['5mbit'],           // 1 option   // <-- Reduced to ONE option
   

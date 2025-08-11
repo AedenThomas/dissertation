@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+// +++++ START OF FINAL, CORRECTED useScreenSharing.ts +++++
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { WebRTCService } from '../services/webrtc';
 import { MetricsService } from '../services/metrics';
 import { SessionConfig } from '../types';
@@ -13,50 +14,39 @@ export const useScreenSharing = (config: SessionConfig) => {
   const metricsServiceRef = useRef<MetricsService | null>(null);
   const localVideoRef = useRef<HTMLVideoElement | null>(null);
 
-  useEffect(() => {
-    const webrtcService = new WebRTCService(config);
-    const metricsService = new MetricsService();
-    
-    webrtcServiceRef.current = webrtcService;
-    metricsServiceRef.current = metricsService;
-
-    webrtcService.onRemoteStream((stream, peerId) => {
-      setRemoteStreams(prev => new Map(prev.set(peerId, stream)));
-    });
-
-    webrtcService.onPeerDisconnected((peerId) => {
-      setRemoteStreams(prev => {
-        const updated = new Map(prev);
-        updated.delete(peerId);
-        return updated;
-      });
-    });
-
-    return () => {
-      webrtcService.disconnect();
-      metricsService.stopMonitoring();
-    };
-  }, [config]);
-
-  const startSharing = async () => {
+  const startSharing = useCallback(async () => {
     try {
       setError(null);
-      const webrtcService = webrtcServiceRef.current;
-      const metricsService = metricsServiceRef.current;
-      
-      if (!webrtcService || !metricsService) return;
+      // Step 1: Get the local media stream first
+      const stream = await navigator.mediaDevices.getDisplayMedia({
+        video: { contentHint: 'detail' } as MediaTrackConstraints, // <-- THE FIX
+        audio: false,
+      });
 
-      const stream = await webrtcService.startScreenSharing();
-      
+
       if (localVideoRef.current) {
         localVideoRef.current.srcObject = stream;
-        metricsService.startLatencyMonitoring(
-          localVideoRef.current as any,
-          config.role === 'presenter'
-        );
       }
-
-      await webrtcService.joinSession();
+      
+      // Step 2: NOW create the WebRTC service, passing the stream to it
+      const webrtcService = new WebRTCService(config, stream);
+      webrtcServiceRef.current = webrtcService;
+      
+      // Step 3: Set up callbacks
+      webrtcService.onRemoteStream = (remoteStream, peerId) => {
+        setRemoteStreams(prev => new Map(prev).set(peerId, remoteStream));
+      };
+      webrtcService.onPeerDisconnected = (peerId) => {
+        setRemoteStreams(prev => {
+          const updated = new Map(prev);
+          updated.delete(peerId);
+          return updated;
+        });
+      };
+      
+      // Step 4: Connect to signaling and start WebRTC
+      webrtcService.connect();
+      
       setIsSharing(true);
       setIsConnected(true);
     } catch (err) {
@@ -64,41 +54,54 @@ export const useScreenSharing = (config: SessionConfig) => {
       setError(errorMessage);
       console.error('Error starting screen sharing:', err);
     }
-  };
+  }, [config]);
+  
+  // For viewers, we need a way to connect without a local stream
+  const joinSessionAsViewer = useCallback(() => {
+    // We pass a dummy stream for viewers, as they don't share
+    // This satisfies the new constructor signature.
+    const webrtcService = new WebRTCService(config, new MediaStream());
+    webrtcServiceRef.current = webrtcService;
 
+    webrtcService.onRemoteStream = (remoteStream, peerId) => {
+        setRemoteStreams(prev => new Map(prev).set(peerId, remoteStream));
+    };
+    webrtcService.onPeerDisconnected = (peerId) => {
+        setRemoteStreams(prev => {
+            const updated = new Map(prev);
+            updated.delete(peerId);
+            return updated;
+        });
+    };
+    
+    webrtcService.connect();
+    setIsConnected(true);
+  }, [config]);
+
+  useEffect(() => {
+    metricsServiceRef.current = new MetricsService();
+    // This effect now decides whether to start as presenter or viewer
+    if (config.role === 'presenter') {
+      startSharing();
+    } else {
+      joinSessionAsViewer();
+    }
+
+    return () => {
+      webrtcServiceRef.current?.disconnect();
+      metricsServiceRef.current?.stopMonitoring();
+    };
+  }, [config, startSharing, joinSessionAsViewer]);
+  
   const stopSharing = () => {
-    const webrtcService = webrtcServiceRef.current;
-    const metricsService = metricsServiceRef.current;
-    
-    if (webrtcService) {
-      webrtcService.stopScreenSharing();
+    webrtcServiceRef.current?.disconnect();
+    if (metricsServiceRef.current) {
+      metricsServiceRef.current.stopMonitoring();
     }
-    
-    if (metricsService) {
-      metricsService.stopMonitoring();
-    }
-    
     setIsSharing(false);
     setIsConnected(false);
   };
-
-  const joinSession = async () => {
-    try {
-      setError(null);
-      const webrtcService = webrtcServiceRef.current;
-      const metricsService = metricsServiceRef.current;
-      
-      if (!webrtcService || !metricsService) return;
-
-      await webrtcService.joinSession();
-      setIsConnected(true);
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Failed to join session';
-      setError(errorMessage);
-      console.error('Error joining session:', err);
-    }
-  };
-
+  
   const getMetrics = () => {
     return metricsServiceRef.current?.exportMetrics() || null;
   };
@@ -110,8 +113,8 @@ export const useScreenSharing = (config: SessionConfig) => {
     error,
     startSharing,
     stopSharing,
-    joinSession,
     getMetrics,
     localVideoRef
   };
 };
+// +++++ END OF FINAL, CORRECTED useScreenSharing.ts +++++

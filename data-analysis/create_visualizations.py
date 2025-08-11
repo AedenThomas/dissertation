@@ -62,7 +62,7 @@ def create_cpu_utilization_chart(data):
         viewers = item['numViewers']
         cpu = item['avgCpu']
         
-        if item['architecture'] == 'P2P':
+        if item['architecture'].lower() == 'p2p':
             p2p_data[viewers].append(cpu)
         else:  # SFU
             sfu_data[viewers].append(cpu)
@@ -106,7 +106,7 @@ def create_latency_vs_loss_chart(data):
         loss = item['packetLoss']
         latency = item['avgLatency']
         
-        if item['architecture'] == 'P2P':
+        if item['architecture'].lower() == 'p2p':
             p2p_data[loss].append(latency)
         else:  # SFU
             sfu_data[loss].append(latency)
@@ -151,7 +151,7 @@ def create_tls_vs_bandwidth_chart(data):
         bandwidth = item['bandwidth']
         tls = item['avgTls']
         
-        if item['architecture'] == 'P2P':
+        if item['architecture'].lower() == 'p2p':
             p2p_data[bandwidth].append(tls)
         else:  # SFU
             sfu_data[bandwidth].append(tls)

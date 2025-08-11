@@ -18,7 +18,7 @@ export const ScreenShareSession: React.FC<ScreenShareSessionProps> = ({
     error,
     startSharing,
     stopSharing,
-    joinSession,
+    // joinSession,
     getMetrics,
     localVideoRef
   } = useScreenSharing(config);
@@ -29,7 +29,7 @@ export const ScreenShareSession: React.FC<ScreenShareSessionProps> = ({
     if (config.role === 'presenter') {
       startSharing();
     } else {
-      joinSession();
+      // joinSession();
     }
   }, []);
 
