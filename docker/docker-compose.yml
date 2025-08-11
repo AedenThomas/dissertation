@@ -1,0 +1,96 @@
+services:
+  client:
+    build:
+      context: ../client
+      dockerfile: ../docker/Dockerfile.client
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_SIGNALING_SERVER_URL=http://localhost:3001
+      - REACT_APP_SFU_SERVER_URL=http://localhost:3002
+    depends_on:
+      - signaling-server
+      - sfu-server
+    volumes:
+      - ../client/public/test-content.html:/app/public/test-content.html:ro
+    networks:
+      - webrtc-network
+
+  signaling-server:
+    build:
+      context: ../signaling-server
+      dockerfile: ../docker/Dockerfile.signaling
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+    networks:
+      - webrtc-network
+
+  sfu-server:
+    build:
+      context: ../sfu-server
+      dockerfile: ../docker/Dockerfile.sfu
+      platforms:
+        - linux/amd64
+    ports:
+      - "3002:3002"
+      - "10000-10100:10000-10100/udp"
+    environment:
+      - NODE_ENV=production
+      - SFU_PORT=3002
+      - SIGNALING_SERVER_URL=http://signaling-server:3001
+      - ANNOUNCED_IP=127.0.0.1
+    depends_on:
+      - signaling-server
+    networks:
+      - webrtc-network
+    cap_add:
+      - NET_ADMIN
+
+  test-framework:
+    build:
+      context: ../test-framework
+      dockerfile: ../docker/Dockerfile.test
+    volumes:
+      - ../data-analysis/results:/app/results
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - CLIENT_URL=http://client:3000
+      - SIGNALING_SERVER_URL=http://signaling-server:3001
+      - SFU_SERVER_URL=http://sfu-server:3002
+      - TEST_DURATION=60
+      - RESULTS_DIR=/app/results
+    depends_on:
+      - client
+      - signaling-server
+      - sfu-server
+    networks:
+      - webrtc-network
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+
+  data-analysis:
+    build:
+      context: ../data-analysis
+      dockerfile: ../docker/Dockerfile.analysis
+    volumes:
+      - ../data-analysis:/app
+    environment:
+      - RESULTS_DIR=/app/results
+    networks:
+      - webrtc-network
+
+networks:
+  webrtc-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+volumes:
+  test-results:
+    driver: local

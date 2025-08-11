@@ -1,0 +1,24 @@
+{
+  "name": "webrtc-test-framework",
+  "version": "1.0.0",
+  "description": "Automated testing framework for WebRTC screen sharing evaluation",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node src/index.js",
+    "single-test": "node src/single-test.js",
+    "build": "npm install"
+  },
+  "dependencies": {
+    "puppeteer": "^19.7.0",
+    "pidusage": "^3.0.2",
+    "tesseract.js": "^3.0.2",
+    "csv-writer": "^1.6.0",
+    "jimp": "^0.16.1",
+    "levenshtein": "^1.0.5",
+    "fs-extra": "^11.1.0"
+  },
+  "devDependencies": {},
+  "keywords": ["webrtc", "testing", "puppeteer", "performance"],
+  "author": "Research Project",
+  "license": "MIT"
+}

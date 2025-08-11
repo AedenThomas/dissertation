@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Content - Source Code Sample</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            margin: 20px;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        
+        .code-block {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            white-space: pre;
+            overflow-x: auto;
+        }
+        
+        .keyword { color: #0000ff; font-weight: bold; }
+        .string { color: #008000; }
+        .comment { color: #808080; font-style: italic; }
+        .function { color: #795e26; }
+        .variable { color: #001080; }
+        .number { color: #098658; }
+    </style>
+</head>
+<body>
+    <h1>Complex Source Code Sample for Screen Sharing Test</h1>
+    <p>This content is designed to test text legibility in screen sharing scenarios.</p>
+    
+    <div class="code-block">
+<span class="keyword">class</span> <span class="function">WebRTCScreenSharingSystem</span> {
+    <span class="keyword">private</span> <span class="variable">peerConnections</span>: <span class="keyword">Map</span>&lt;<span class="keyword">string</span>, <span class="keyword">RTCPeerConnection</span>&gt;;
+    <span class="keyword">private</span> <span class="variable">localStream</span>: <span class="keyword">MediaStream</span> | <span class="keyword">null</span> = <span class="keyword">null</span>;
+    <span class="keyword">private</span> <span class="variable">signalingSocket</span>: <span class="keyword">Socket</span>;
+    
+    <span class="keyword">constructor</span>(<span class="variable">signalingServerUrl</span>: <span class="keyword">string</span>) {
+        <span class="keyword">this</span>.<span class="variable">peerConnections</span> = <span class="keyword">new</span> <span class="keyword">Map</span>();
+        <span class="keyword">this</span>.<span class="variable">signalingSocket</span> = <span class="function">io</span>(<span class="variable">signalingServerUrl</span>);
+        <span class="keyword">this</span>.<span class="function">setupSignalingListeners</span>();
+    }
+    
+    <span class="keyword">async</span> <span class="function">startScreenCapture</span>(): <span class="keyword">Promise</span>&lt;<span class="keyword">void</span>&gt; {
+        <span class="keyword">try</span> {
+            <span class="keyword">this</span>.<span class="variable">localStream</span> = <span class="keyword">await</span> <span class="variable">navigator</span>.<span class="variable">mediaDevices</span>.<span class="function">getDisplayMedia</span>({
+                <span class="variable">video</span>: { 
+                    <span class="variable">contentHint</span>: <span class="string">'detail'</span>,
+                    <span class="variable">width</span>: { <span class="variable">ideal</span>: <span class="number">1920</span> },
+                    <span class="variable">height</span>: { <span class="variable">ideal</span>: <span class="number">1080</span> }
+                },
+                <span class="variable">audio</span>: <span class="keyword">false</span>
+            });
+            
+            <span class="comment">// Add track ended listener for cleanup</span>
+            <span class="keyword">this</span>.<span class="variable">localStream</span>.<span class="function">getVideoTracks</span>()[<span class="number">0</span>].<span class="function">addEventListener</span>(<span class="string">'ended'</span>, () => {
+                <span class="keyword">this</span>.<span class="function">handleStreamEnded</span>();
+            });
+            
+        } <span class="keyword">catch</span> (<span class="variable">error</span>) {
+            <span class="variable">console</span>.<span class="function">error</span>(<span class="string">'Failed to capture screen:'</span>, <span class="variable">error</span>);
+            <span class="keyword">throw</span> <span class="variable">error</span>;
+        }
+    }
+    
+    <span class="keyword">private</span> <span class="function">setupSignalingListeners</span>(): <span class="keyword">void</span> {
+        <span class="keyword">this</span>.<span class="variable">signalingSocket</span>.<span class="function">on</span>(<span class="string">'offer'</span>, <span class="keyword">async</span> (<span class="variable">data</span>) => {
+            <span class="keyword">await</span> <span class="keyword">this</span>.<span class="function">handleOffer</span>(<span class="variable">data</span>);
+        });
+        
+        <span class="keyword">this</span>.<span class="variable">signalingSocket</span>.<span class="function">on</span>(<span class="string">'answer'</span>, <span class="keyword">async</span> (<span class="variable">data</span>) => {
+            <span class="keyword">await</span> <span class="keyword">this</span>.<span class="function">handleAnswer</span>(<span class="variable">data</span>);
+        });
+        
+        <span class="keyword">this</span>.<span class="variable">signalingSocket</span>.<span class="function">on</span>(<span class="string">'ice-candidate'</span>, <span class="keyword">async</span> (<span class="variable">data</span>) => {
+            <span class="keyword">await</span> <span class="keyword">this</span>.<span class="function">handleIceCandidate</span>(<span class="variable">data</span>);
+        });
+    }
+}</span>
+    </div>
+    
+    <div class="code-block">
+<span class="comment">// Performance monitoring utilities</span>
+<span class="keyword">interface</span> <span class="function">PerformanceMetrics</span> {
+    <span class="variable">latency</span>: <span class="keyword">number</span>[];
+    <span class="variable">cpuUsage</span>: <span class="keyword">number</span>;
+    <span class="variable">bandwidth</span>: <span class="keyword">number</span>;
+    <span class="variable">packetLoss</span>: <span class="keyword">number</span>;
+    <span class="variable">timestamp</span>: <span class="keyword">number</span>;
+}
+
+<span class="keyword">class</span> <span class="function">LatencyMeasurement</span> {
+    <span class="keyword">private</span> <span class="variable">measurements</span>: <span class="keyword">number</span>[] = [];
+    <span class="keyword">private</span> <span class="variable">canvas</span>: <span class="keyword">HTMLCanvasElement</span>;
+    <span class="keyword">private</span> <span class="variable">context</span>: <span class="keyword">CanvasRenderingContext2D</span>;
+    
+    <span class="keyword">constructor</span>() {
+        <span class="keyword">this</span>.<span class="variable">canvas</span> = <span class="variable">document</span>.<span class="function">createElement</span>(<span class="string">'canvas'</span>);
+        <span class="keyword">this</span>.<span class="variable">context</span> = <span class="keyword">this</span>.<span class="variable">canvas</span>.<span class="function">getContext</span>(<span class="string">'2d'</span>)!;
+    }
+    
+    <span class="function">encodeTimestamp</span>(<span class="variable">timestamp</span>: <span class="keyword">number</span>): <span class="keyword">void</span> {
+        <span class="keyword">const</span> <span class="variable">r</span> = (<span class="variable">timestamp</span> >> <span class="number">16</span>) & <span class="number">0xFF</span>;
+        <span class="keyword">const</span> <span class="variable">g</span> = (<span class="variable">timestamp</span> >> <span class="number">8</span>) & <span class="number">0xFF</span>;
+        <span class="keyword">const</span> <span class="variable">b</span> = <span class="variable">timestamp</span> & <span class="number">0xFF</span>;
+        
+        <span class="keyword">this</span>.<span class="variable">context</span>.<span class="variable">fillStyle</span> = `<span class="string">rgb(</span>${<span class="variable">r</span>}<span class="string">,</span>${<span class="variable">g</span>}<span class="string">,</span>${<span class="variable">b</span>}<span class="string">)</span>`;
+        <span class="keyword">this</span>.<span class="variable">context</span>.<span class="function">fillRect</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">2</span>);
+    }
+    
+    <span class="function">calculateLatency</span>(<span class="variable">imageData</span>: <span class="keyword">ImageData</span>): <span class="keyword">number</span> {
+        <span class="keyword">const</span> <span class="variable">pixel</span> = <span class="variable">imageData</span>.<span class="variable">data</span>;
+        <span class="keyword">const</span> <span class="variable">timestamp</span> = (<span class="variable">pixel</span>[<span class="number">0</span>] << <span class="number">16</span>) | (<span class="variable">pixel</span>[<span class="number">1</span>] << <span class="number">8</span>) | <span class="variable">pixel</span>[<span class="number">2</span>];
+        <span class="keyword">return</span> <span class="function">Date</span>.<span class="function">now</span>() - <span class="variable">timestamp</span>;
+    }
+}
+    </div>
+    
+    <p>Additional complex text patterns for OCR testing:</p>
+    <div class="code-block">
+<span class="comment">/* 
+ * Complex mathematical formulas and symbols:
+ * Σ(i=1 to n) x²ᵢ = (x₁² + x₂² + ... + xₙ²)
+ * ∀x∈ℝ: f(x) = ∫₀^∞ e^(-t²) dt ≈ √π/2
+ * Ω(n log n) ⊆ O(n²) ∩ Θ(n log n)
+ */</span>
+
+<span class="keyword">const</span> <span class="variable">SPECIAL_CHARS</span> = <span class="string">'!@#$%^&amp;*()_+-={}[]|\\:";\'&lt;&gt;?,./'</span>;
+<span class="keyword">const</span> <span class="variable">UNICODE_TEST</span> = <span class="string">'αβγδε ∑∏∆∇ ←→↑↓ ≤≥≠≈ ∞∂∆∇'</span>;
+<span class="keyword">const</span> <span class="variable">MIXED_CASE</span> = <span class="string">'CamelCase snake_case CONSTANT_VALUE'</span>;
+    </div>
+    
+    <p>This test content contains various font sizes, styles, and complex characters to thoroughly evaluate text legibility in screen sharing systems.</p>
+</body>
+</html>
