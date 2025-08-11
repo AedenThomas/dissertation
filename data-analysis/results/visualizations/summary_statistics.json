@@ -1,0 +1,21 @@
+{
+  "total_tests": 10,
+  "architectures": [
+    "P2P",
+    "SFU"
+  ],
+  "performance_comparison": {
+    "P2P": {
+      "avg_cpu": 0.7420043699285183,
+      "avg_latency": 0.0,
+      "avg_tls": 0.9316005471956224,
+      "test_count": 5
+    },
+    "SFU": {
+      "avg_cpu": 0.7622097803000638,
+      "avg_latency": 0.0,
+      "avg_tls": 0.9316005471956224,
+      "test_count": 5
+    }
+  }
+}

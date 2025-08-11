@@ -17,20 +17,20 @@ dist/
 .env.production.local
 
 # Test results and data
-data-analysis/results/
-*/results/
-*.csv
-*.json
+# data-analysis/results/
+#*/results/
+#*.csv
+#*.json
 !package*.json
 !tsconfig.json
 !**/config.js
 !**/config.json
 
 # Screenshots and media
-screenshots/
-*.png
-*.jpg
-*.jpeg
+#screenshots/
+#*.png
+#*.jpg
+#*.jpeg
 *.mp4
 *.webm
 

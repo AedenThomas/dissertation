@@ -1,0 +1,3492 @@
+[
+  {
+    "testId": 1,
+    "architecture": "p2p",
+    "numViewers": 1,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754931537976,
+    "success": true,
+    "sessionId": "test-1-1754931543003",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.7286457459305252,
+        "min": 0,
+        "max": 4
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754931552966,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931553957,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931554958,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931555958,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931556959,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931557961,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754931558962,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931559962,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931560962,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931561962,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931562963,
+            "cpu": 0.9900990099009901
+          },
+          {
+            "timestamp": 1754931563963,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931564964,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931565964,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931566964,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931567965,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931568966,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931569966,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931570967,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931571967,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931572967,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931573968,
+            "cpu": 4
+          },
+          {
+            "timestamp": 1754931574968,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931575969,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931576969,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931577969,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931578970,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931579971,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931580972,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931581972,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931582971,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931583972,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931584973,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931585974,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931586974,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931587974,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754931588975,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931589976,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931590977,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931591978,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931592979,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931593980,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931594980,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931595981,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931596980,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931597981,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931598982,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931599982,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931600983,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931601983,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931602985,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931603985,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931604986,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931605987,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931606987,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931607987,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931608988,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931609988,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931610989,
+            "cpu": 0
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754931558153,
+            "screenshotPath": "/app/results/test_1_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931562945,
+            "screenshotPath": "/app/results/test_1_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931567837,
+            "screenshotPath": "/app/results/test_1_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931572899,
+            "screenshotPath": "/app/results/test_1_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931577891,
+            "screenshotPath": "/app/results/test_1_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931582899,
+            "screenshotPath": "/app/results/test_1_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931587875,
+            "screenshotPath": "/app/results/test_1_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931592831,
+            "screenshotPath": "/app/results/test_1_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931597817,
+            "screenshotPath": "/app/results/test_1_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931602984,
+            "screenshotPath": "/app/results/test_1_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931607906,
+            "screenshotPath": "/app/results/test_1_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754931611957
+  },
+  {
+    "testId": 2,
+    "architecture": "p2p",
+    "numViewers": 3,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754931617105,
+    "success": true,
+    "sessionId": "test-2-1754931622128",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.7620406108407451,
+        "min": 0,
+        "max": 4
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754931634477,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931635478,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931636478,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931637479,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931638479,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931639479,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931640480,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931641481,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931642481,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931643481,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931644481,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931645482,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931646482,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931647484,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931648485,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931649486,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931650487,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931651488,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931652488,
+            "cpu": 4
+          },
+          {
+            "timestamp": 1754931653490,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931654491,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931655492,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931656493,
+            "cpu": 0.9900990099009901
+          },
+          {
+            "timestamp": 1754931657494,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931658494,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931659494,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931660495,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931661496,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931662497,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931663498,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931664498,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754931665500,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931666501,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931667502,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931668503,
+            "cpu": 0.9900990099009901
+          },
+          {
+            "timestamp": 1754931669503,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931670504,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931671504,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931672506,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931673506,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931674508,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754931675509,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931676510,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931677511,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931678512,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931679514,
+            "cpu": 1.9801980198019802
+          },
+          {
+            "timestamp": 1754931680515,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931681517,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931682519,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931683520,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931684521,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931685522,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931686523,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931687524,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931688524,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931689526,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931690527,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931691527,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931692528,
+            "cpu": 1
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754931639460,
+            "screenshotPath": "/app/results/test_2_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931644395,
+            "screenshotPath": "/app/results/test_2_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931649385,
+            "screenshotPath": "/app/results/test_2_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931654363,
+            "screenshotPath": "/app/results/test_2_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931659366,
+            "screenshotPath": "/app/results/test_2_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931664470,
+            "screenshotPath": "/app/results/test_2_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931669420,
+            "screenshotPath": "/app/results/test_2_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931674408,
+            "screenshotPath": "/app/results/test_2_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931679391,
+            "screenshotPath": "/app/results/test_2_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931684407,
+            "screenshotPath": "/app/results/test_2_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931689415,
+            "screenshotPath": "/app/results/test_2_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754931693476
+  },
+  {
+    "testId": 3,
+    "architecture": "p2p",
+    "numViewers": 5,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754931698756,
+    "success": true,
+    "sessionId": "test-3-1754931703776",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.7288169494915593,
+        "min": 0,
+        "max": 4
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754931718618,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931719619,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931720621,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931721620,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931722623,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931723621,
+            "cpu": 1.0101010101010102
+          },
+          {
+            "timestamp": 1754931724621,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931725623,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931726624,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931727624,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931728625,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931729626,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931730627,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931731628,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931732629,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931733630,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931734631,
+            "cpu": 4
+          },
+          {
+            "timestamp": 1754931735631,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931736632,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931737631,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931738631,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931739632,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931740631,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931741631,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931742631,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931743631,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931744631,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931745632,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931746632,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931747632,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931748632,
+            "cpu": 0.9900990099009901
+          },
+          {
+            "timestamp": 1754931749633,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931750633,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931751634,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931752634,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931753633,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931754633,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931755633,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931756633,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931757633,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931758634,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931759634,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931760634,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931761635,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931762634,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931763634,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931764634,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931765635,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931766635,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931767635,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931768636,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754931769636,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931770635,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931771635,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931772635,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931773635,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931774635,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931775636,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931776637,
+            "cpu": 0
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754931723557,
+            "screenshotPath": "/app/results/test_3_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931728602,
+            "screenshotPath": "/app/results/test_3_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931733594,
+            "screenshotPath": "/app/results/test_3_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931738600,
+            "screenshotPath": "/app/results/test_3_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931743595,
+            "screenshotPath": "/app/results/test_3_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931748583,
+            "screenshotPath": "/app/results/test_3_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931753597,
+            "screenshotPath": "/app/results/test_3_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931758536,
+            "screenshotPath": "/app/results/test_3_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931763516,
+            "screenshotPath": "/app/results/test_3_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931768611,
+            "screenshotPath": "/app/results/test_3_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931773560,
+            "screenshotPath": "/app/results/test_3_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754931777616
+  },
+  {
+    "testId": 4,
+    "architecture": "p2p",
+    "numViewers": 8,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754931783029,
+    "success": true,
+    "sessionId": "test-4-1754931788056",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.7627118644067796,
+        "min": 0,
+        "max": 3
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754931807267,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931808267,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931809268,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931810270,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931811269,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931812271,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931813269,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931814269,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931815270,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931816270,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931817271,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931818271,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931819272,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754931820273,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931821273,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931822273,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754931823274,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931824274,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931825275,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931826275,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931827275,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931828276,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931829277,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931830278,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931831278,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931832279,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931833279,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931834279,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931835280,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931836280,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931837281,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931838281,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931839282,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931840284,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931841285,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931842284,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931843284,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931844285,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931845286,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931846286,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931847286,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931848286,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931849287,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931850288,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931851288,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931852288,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931853288,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931854288,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931855289,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931856290,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931857290,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931858291,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931859291,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931860292,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931861293,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931862293,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931863293,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931864294,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931865295,
+            "cpu": 1
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754931812419,
+            "screenshotPath": "/app/results/test_4_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931817239,
+            "screenshotPath": "/app/results/test_4_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931822281,
+            "screenshotPath": "/app/results/test_4_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931827215,
+            "screenshotPath": "/app/results/test_4_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931832246,
+            "screenshotPath": "/app/results/test_4_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931837179,
+            "screenshotPath": "/app/results/test_4_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931842251,
+            "screenshotPath": "/app/results/test_4_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931847161,
+            "screenshotPath": "/app/results/test_4_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931852141,
+            "screenshotPath": "/app/results/test_4_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931857107,
+            "screenshotPath": "/app/results/test_4_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931862229,
+            "screenshotPath": "/app/results/test_4_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754931866268
+  },
+  {
+    "testId": 5,
+    "architecture": "p2p",
+    "numViewers": 15,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754931871857,
+    "success": true,
+    "sessionId": "test-5-1754931876880",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.727806678972982,
+        "min": 0,
+        "max": 3.9603960396039604
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754931905291,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931906291,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931907293,
+            "cpu": 3.9603960396039604
+          },
+          {
+            "timestamp": 1754931908294,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931909294,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931910295,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931911295,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931912296,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931913297,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931914297,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931915298,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931916299,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931917299,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931918299,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931919300,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931920301,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931921301,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931922303,
+            "cpu": 1.9801980198019802
+          },
+          {
+            "timestamp": 1754931923303,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931924303,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931925303,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931926303,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931927304,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931928305,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931929306,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931930307,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931931308,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931932310,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931933310,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931934311,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931935312,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931936313,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931937314,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931938315,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931939316,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931940317,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754931941317,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931942318,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931943317,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931944317,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931945318,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931946317,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931947317,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931948317,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931949317,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931950318,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931951317,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931952318,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931953318,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931954318,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931955318,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931956319,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931957319,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931958319,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931959319,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931960319,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931961319,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931962320,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931963320,
+            "cpu": 0
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754931910257,
+            "screenshotPath": "/app/results/test_5_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931915257,
+            "screenshotPath": "/app/results/test_5_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931920259,
+            "screenshotPath": "/app/results/test_5_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931925220,
+            "screenshotPath": "/app/results/test_5_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931930197,
+            "screenshotPath": "/app/results/test_5_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931935216,
+            "screenshotPath": "/app/results/test_5_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931940270,
+            "screenshotPath": "/app/results/test_5_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931945313,
+            "screenshotPath": "/app/results/test_5_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931950267,
+            "screenshotPath": "/app/results/test_5_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931955163,
+            "screenshotPath": "/app/results/test_5_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931960223,
+            "screenshotPath": "/app/results/test_5_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754931964290
+  },
+  {
+    "testId": 6,
+    "architecture": "sfu",
+    "numViewers": 1,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754931970324,
+    "success": true,
+    "sessionId": "test-6-1754931975344",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.7454304752509148,
+        "min": 0,
+        "max": 3
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754931984912,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931985910,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754931986911,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931987913,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931988912,
+            "cpu": 1.0101010101007726
+          },
+          {
+            "timestamp": 1754931989913,
+            "cpu": 0.9900990099012184
+          },
+          {
+            "timestamp": 1754931990913,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931991914,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931992915,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931993915,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931994916,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931995917,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931996917,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754931997917,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931998918,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754931999917,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932000918,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932001918,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932002919,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932003919,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932004919,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932005920,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754932006921,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932007921,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932008921,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932009921,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932010922,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932011922,
+            "cpu": 0.9900990099009901
+          },
+          {
+            "timestamp": 1754932012923,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932013923,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932014924,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932015925,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932016926,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932017926,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932018926,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932019926,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932020927,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932021928,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932022929,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932023929,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932024930,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932025931,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932026931,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932027933,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932028933,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932029933,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932030934,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932031935,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932032936,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932033937,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932034938,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932035939,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932036940,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932037941,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932038942,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932039942,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932040943,
+            "cpu": 0.9900990099009901
+          },
+          {
+            "timestamp": 1754932041943,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932042944,
+            "cpu": 0
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754931989899,
+            "screenshotPath": "/app/results/test_6_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931994845,
+            "screenshotPath": "/app/results/test_6_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754931999804,
+            "screenshotPath": "/app/results/test_6_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932004856,
+            "screenshotPath": "/app/results/test_6_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932009866,
+            "screenshotPath": "/app/results/test_6_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932014815,
+            "screenshotPath": "/app/results/test_6_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932019865,
+            "screenshotPath": "/app/results/test_6_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932024862,
+            "screenshotPath": "/app/results/test_6_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932029830,
+            "screenshotPath": "/app/results/test_6_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932034873,
+            "screenshotPath": "/app/results/test_6_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932039835,
+            "screenshotPath": "/app/results/test_6_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754932043908
+  },
+  {
+    "testId": 7,
+    "architecture": "sfu",
+    "numViewers": 3,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754932049059,
+    "success": true,
+    "sessionId": "test-7-1754932054085",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.7618727974492364,
+        "min": 0,
+        "max": 5
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754932066267,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932067268,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932068269,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932069270,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932070270,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932071271,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932072271,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932073271,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932074273,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932075274,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932076274,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932077275,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932078276,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932079278,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932080278,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932081279,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932082278,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932083280,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932084281,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932085281,
+            "cpu": 5
+          },
+          {
+            "timestamp": 1754932086282,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932087283,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932088283,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932089284,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932090285,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932091286,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932092287,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932093289,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932094290,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932095290,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932096292,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932097293,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932098294,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932099295,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932100296,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932101296,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932102298,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932103299,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932104301,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932105301,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932106303,
+            "cpu": 1.9801980198019802
+          },
+          {
+            "timestamp": 1754932107304,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932108306,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932109306,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932110308,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932111309,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932112310,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932113311,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932114312,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932115312,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932116313,
+            "cpu": 2.9702970297029703
+          },
+          {
+            "timestamp": 1754932117314,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932118316,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932119318,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932120319,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932121319,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932122320,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932123321,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932124321,
+            "cpu": 1
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754932071234,
+            "screenshotPath": "/app/results/test_7_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932076190,
+            "screenshotPath": "/app/results/test_7_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932081130,
+            "screenshotPath": "/app/results/test_7_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932086178,
+            "screenshotPath": "/app/results/test_7_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932091201,
+            "screenshotPath": "/app/results/test_7_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932096205,
+            "screenshotPath": "/app/results/test_7_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932101217,
+            "screenshotPath": "/app/results/test_7_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932106187,
+            "screenshotPath": "/app/results/test_7_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932111249,
+            "screenshotPath": "/app/results/test_7_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932116197,
+            "screenshotPath": "/app/results/test_7_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932121170,
+            "screenshotPath": "/app/results/test_7_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754932125266
+  },
+  {
+    "testId": 8,
+    "architecture": "sfu",
+    "numViewers": 5,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754932130553,
+    "success": true,
+    "sessionId": "test-8-1754932135578",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.7789931535526434,
+        "min": 0,
+        "max": 3
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754932150547,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932151547,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932152548,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932153549,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932154549,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932155549,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932156550,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932157550,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932158551,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932159551,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932160551,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754932161552,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932162552,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932163552,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932164552,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932165553,
+            "cpu": 1.9801980198019802
+          },
+          {
+            "timestamp": 1754932166553,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754932167553,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932168554,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932169554,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932170555,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932171555,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932172555,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932173556,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932174557,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932175557,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932176557,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932177558,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932178558,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932179559,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932180559,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932181560,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932182561,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932183562,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932184562,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932185562,
+            "cpu": 1.0101010101010102
+          },
+          {
+            "timestamp": 1754932186562,
+            "cpu": 0.9900990099009901
+          },
+          {
+            "timestamp": 1754932187562,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932188562,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932189562,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932190562,
+            "cpu": 1.9801980198019802
+          },
+          {
+            "timestamp": 1754932191563,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932192563,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932193564,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932194564,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932195564,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932196564,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932197564,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932198565,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932199565,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754932200565,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932201566,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932202567,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932203568,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932204568,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932205569,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754932206570,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932207570,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932208571,
+            "cpu": 1
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754932155423,
+            "screenshotPath": "/app/results/test_8_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932160393,
+            "screenshotPath": "/app/results/test_8_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932165470,
+            "screenshotPath": "/app/results/test_8_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932170508,
+            "screenshotPath": "/app/results/test_8_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932175496,
+            "screenshotPath": "/app/results/test_8_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932180416,
+            "screenshotPath": "/app/results/test_8_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932185494,
+            "screenshotPath": "/app/results/test_8_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932190509,
+            "screenshotPath": "/app/results/test_8_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932195469,
+            "screenshotPath": "/app/results/test_8_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932200457,
+            "screenshotPath": "/app/results/test_8_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932205534,
+            "screenshotPath": "/app/results/test_8_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754932209546
+  },
+  {
+    "testId": 9,
+    "architecture": "sfu",
+    "numViewers": 8,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754932214926,
+    "success": true,
+    "sessionId": "test-9-1754932219948",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.7286457459305252,
+        "min": 0,
+        "max": 4
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754932238868,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932239868,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932240869,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932241869,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932242869,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932243870,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932244871,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932245871,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932246873,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932247873,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932248873,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754932249873,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932250873,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754932251874,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932252874,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932253875,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754932254875,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932255876,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932256876,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932257876,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932258877,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932259877,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932260878,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932261879,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932262879,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932263879,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932264880,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932265880,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932266881,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932267882,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932268883,
+            "cpu": 0.9900990099009901
+          },
+          {
+            "timestamp": 1754932269884,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932270885,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932271885,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932272885,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932273886,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932274887,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932275888,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932276888,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932277890,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932278890,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932279890,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932280890,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932281891,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932282891,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932283892,
+            "cpu": 4
+          },
+          {
+            "timestamp": 1754932284893,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932285893,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932286894,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932287895,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932288895,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932289896,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932290896,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932291898,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932292898,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932293898,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932294899,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932295900,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932296900,
+            "cpu": 0
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754932243757,
+            "screenshotPath": "/app/results/test_9_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932248834,
+            "screenshotPath": "/app/results/test_9_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932253805,
+            "screenshotPath": "/app/results/test_9_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932258768,
+            "screenshotPath": "/app/results/test_9_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932263830,
+            "screenshotPath": "/app/results/test_9_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932268829,
+            "screenshotPath": "/app/results/test_9_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932273772,
+            "screenshotPath": "/app/results/test_9_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932278763,
+            "screenshotPath": "/app/results/test_9_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932283762,
+            "screenshotPath": "/app/results/test_9_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932288805,
+            "screenshotPath": "/app/results/test_9_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932294108,
+            "screenshotPath": "/app/results/test_9_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754932297866
+  },
+  {
+    "testId": 10,
+    "architecture": "sfu",
+    "numViewers": 15,
+    "packetLoss": 0,
+    "bandwidth": "5mbit",
+    "timestamp": 1754932303393,
+    "success": true,
+    "sessionId": "test-10-1754932308419",
+    "metrics": {
+      "latency": {
+        "average": 0,
+        "min": 0,
+        "max": 0,
+        "median": 0
+      },
+      "cpu": {
+        "average": 0.7961067293169994,
+        "min": 0,
+        "max": 7.000000000000001
+      },
+      "tls": {
+        "average": 0.9316005471956224,
+        "min": 0.9316005471956225,
+        "max": 0.9316005471956225
+      },
+      "rawData": {
+        "latencyMeasurements": [],
+        "cpuMeasurements": [
+          {
+            "timestamp": 1754932335865,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932336865,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932337867,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932338868,
+            "cpu": 3
+          },
+          {
+            "timestamp": 1754932339870,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932340868,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932341868,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932342868,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932343869,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932344870,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932345871,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932346872,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932347873,
+            "cpu": 0.9900990099009901
+          },
+          {
+            "timestamp": 1754932348872,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932349872,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932350873,
+            "cpu": 1.9801980198019802
+          },
+          {
+            "timestamp": 1754932351873,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932352873,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932353874,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932354874,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932355873,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932356874,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932357876,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932358875,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932359875,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932360875,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932361876,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932362876,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932363875,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932364875,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932365875,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932366876,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932367876,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932368876,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932369876,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932370877,
+            "cpu": 7.000000000000001
+          },
+          {
+            "timestamp": 1754932371877,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932372877,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932373877,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932374877,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932375878,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932376877,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932377877,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932378877,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932379877,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932380877,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932381878,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932382878,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932383878,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932384878,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932385878,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932386878,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932387879,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932388879,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932389879,
+            "cpu": 1
+          },
+          {
+            "timestamp": 1754932390879,
+            "cpu": 2
+          },
+          {
+            "timestamp": 1754932391880,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932392880,
+            "cpu": 0
+          },
+          {
+            "timestamp": 1754932393880,
+            "cpu": 1
+          }
+        ],
+        "screenshotResults": [
+          {
+            "timestamp": 1754932340840,
+            "screenshotPath": "/app/results/test_10_1.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932345804,
+            "screenshotPath": "/app/results/test_10_2.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932350797,
+            "screenshotPath": "/app/results/test_10_3.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932355758,
+            "screenshotPath": "/app/results/test_10_4.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932360758,
+            "screenshotPath": "/app/results/test_10_5.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932365777,
+            "screenshotPath": "/app/results/test_10_6.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932370829,
+            "screenshotPath": "/app/results/test_10_7.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932375763,
+            "screenshotPath": "/app/results/test_10_8.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932380812,
+            "screenshotPath": "/app/results/test_10_9.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932385825,
+            "screenshotPath": "/app/results/test_10_10.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          },
+          {
+            "timestamp": 1754932390803,
+            "screenshotPath": "/app/results/test_10_11.png",
+            "recognizedText": "Error Cannot read properties of undefined (reading 'getDispl",
+            "tlsScore": 0.9316005471956225,
+            "levenshteinDistance": 681
+          }
+        ]
+      }
+    },
+    "completedAt": 1754932394865
+  }
+]
