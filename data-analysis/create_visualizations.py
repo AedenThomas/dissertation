@@ -195,7 +195,7 @@ def create_summary_stats(data):
     
     # Calculate average performance by architecture
     for arch in ['P2P', 'SFU']:
-        arch_data = [d for d in data if d['architecture'] == arch]
+        arch_data = [d for d in data if d['architecture'].lower() == arch.lower()]
         
         stats['performance_comparison'][arch] = {
             'avg_cpu': np.mean([d['avgCpu'] for d in arch_data]),

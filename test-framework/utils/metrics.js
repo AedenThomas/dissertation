@@ -1,3 +1,6 @@
+const config = require('../src/config');
+const fs = require('fs-extra');
+const path = require('path');
 const pidusage = require('pidusage');
 const Tesseract = require('tesseract.js');
 const Jimp = require('jimp');
@@ -28,65 +31,70 @@ class MetricsCollector {
 
   async captureLatencyMetrics(page, role) {
     try {
-      const metrics = await page.evaluate((role) => {
-        if (role === 'presenter') {
-          const canvas = document.createElement('canvas');
-          const ctx = canvas.getContext('2d');
-          const timestamp = Date.now();
-          
-          const r = (timestamp >> 16) & 0xFF;
-          const g = (timestamp >> 8) & 0xFF;
-          const b = timestamp & 0xFF;
-          
-          ctx.fillStyle = `rgb(${r},${g},${b})`;
-          ctx.fillRect(0, 0, 2, 2);
-          
-          return { action: 'timestamp_encoded', timestamp };
-        } else {
-          const videos = document.querySelectorAll('video');
-          if (videos.length === 0) return { latency: null };
-          
-          const video = videos[0];
-          const canvas = document.createElement('canvas');
-          const ctx = canvas.getContext('2d');
-          canvas.width = video.videoWidth || 640;
-          canvas.height = video.videoHeight || 480;
-          
-          ctx.drawImage(video, 0, 0);
-          const imageData = ctx.getImageData(0, 0, 2, 2);
-          const pixel = imageData.data;
-          
-          if (pixel.length >= 12) {
-            const timestamp = (pixel[0] << 16) | (pixel[1] << 8) | pixel[2];
-            const latency = Date.now() - timestamp;
-            
-            if (latency > 0 && latency < 5000) {
-              return { latency };
-            }
+      if (role === 'presenter') {
+        // On the presenter, find the content page and change the pixel's color
+        const contentPage = (await page.browser().pages())[1]; // The content is the second tab
+        await contentPage.evaluate(() => {
+          const pixel = document.getElementById('latency-pixel');
+          if (pixel) {
+            const timestamp = Date.now();
+            const r = (timestamp >> 16) & 0xFF;
+            const g = (timestamp >> 8) & 0xFF;
+            const b = timestamp & 0xFF;
+            pixel.style.backgroundColor = `rgb(${r},${g},${b})`;
           }
-          
-          return { latency: null };
-        }
-      }, role);
-      
-      if (metrics.latency !== null && metrics.latency !== undefined) {
-        this.latencyMeasurements.push({
-          timestamp: Date.now(),
-          latency: metrics.latency
         });
+        return { action: 'timestamp_encoded' };
+      } else {
+        // On the viewer, read the pixel color from the video stream
+        const metrics = await page.evaluate(() => {
+          const video = document.querySelector('video');
+          if (!video || video.readyState < video.HAVE_METADATA) return { latency: null };
+
+          const canvas = document.createElement('canvas');
+          canvas.width = 4;
+          canvas.height = 4;
+          const ctx = canvas.getContext('2d', { willReadFrequently: true });
+          ctx.drawImage(video, 0, 0, 4, 4);
+          const imageData = ctx.getImageData(0, 0, 1, 1).data;
+          
+          const r = imageData[0];
+          const g = imageData[1];
+          const b = imageData[2];
+
+          // Reconstruct the timestamp from the RGB values
+          // This must be done carefully to avoid floating point issues
+          const decodedTimestamp = (r << 16) | (g << 8) | b;
+          const now = Date.now();
+          
+          // Basic sanity check on the timestamp
+          if (decodedTimestamp > now - 5000 && decodedTimestamp <= now) {
+            return { latency: now - decodedTimestamp };
+          }
+          return { latency: null };
+        });
+        
+        if (metrics && metrics.latency !== null) {
+          this.latencyMeasurements.push({
+            timestamp: Date.now(),
+            latency: metrics.latency
+          });
+        }
+        return metrics;
       }
-      
-      return metrics;
     } catch (error) {
-      console.error('Error capturing latency metrics:', error);
+      // Don't log verbose errors, as this can fail occasionally
       return { latency: null };
     }
   }
 
   async captureScreenshotAndCalculateTLS(page, testId, screenshotIndex) {
     try {
-      const screenshotPath = `${process.env.RESULTS_DIR || './results'}/screenshots/test_${testId}_${screenshotIndex}.png`;
+      const screenshotPath = `${config.screenshotsDir}/test_${testId}_${screenshotIndex}.png`;
       
+      // Ensure the directory exists before trying to save the file. This is the fix.
+      await fs.ensureDir(path.dirname(screenshotPath));
+
       await page.screenshot({ 
         path: screenshotPath,
         fullPage: false,
@@ -97,6 +105,7 @@ class MetricsCollector {
           height: 600
         }
       });
+
 
       const image = await Jimp.read(screenshotPath);
       const processedImage = await image

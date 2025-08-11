@@ -1,9 +1,9 @@
 module.exports = {
   // Test parameters
-  architectures: ['P2P', 'SFU'],
-  numViewers: [1, 2, 3, 4, 5, 8, 10, 15],
-  packetLossRates: [0, 0.01, 0.02, 0.05, 0.10],
-  bandwidthLimits: ['5mbit', '2mbit', '1mbit'],
+  architectures: ['P2P', 'SFU'],        // 2 options
+  numViewers: [1, 3, 5, 8, 15],       // 5 options (a good spread)
+  packetLossRates: [0],                 // 1 option
+  bandwidthLimits: ['5mbit'],           // 1 option   // <-- Reduced to ONE option
   
   // Test execution
   testDuration: 60000, // 60 seconds in milliseconds

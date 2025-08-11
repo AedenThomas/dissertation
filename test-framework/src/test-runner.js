@@ -1,9 +1,9 @@
-const puppeteer = require('puppeteer');
-const fs = require('fs-extra');
-const path = require('path');
-const config = require('./config');
-const MetricsCollector = require('../utils/metrics');
-const NetworkController = require('../utils/network');
+const puppeteer = require("puppeteer");
+const fs = require("fs-extra");
+const path = require("path");
+const config = require("./config");
+const MetricsCollector = require("../utils/metrics");
+const NetworkController = require("../utils/network");
 
 class TestRunner {
   constructor() {
@@ -15,7 +15,7 @@ class TestRunner {
   async initialize() {
     await fs.ensureDir(config.resultsDir);
     await fs.ensureDir(config.screenshotsDir);
-    console.log('Test framework initialized');
+    console.log("Test framework initialized");
   }
 
   async runSingleTest(architecture, numViewers, packetLoss, bandwidth) {
@@ -26,26 +26,29 @@ class TestRunner {
       numViewers,
       packetLoss,
       bandwidth,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     };
 
     console.log(`\n=== Running Test ${this.testId} ===`);
-    console.log(`Architecture: ${architecture}, Viewers: ${numViewers}, Loss: ${packetLoss * 100}%, Bandwidth: ${bandwidth}`);
+    console.log(
+      `Architecture: ${architecture}, Viewers: ${numViewers}, Loss: ${
+        packetLoss * 100
+      }%, Bandwidth: ${bandwidth}`
+    );
 
     try {
       await this.networkController.setNetworkConditions(packetLoss, bandwidth);
-      
-      await new Promise(resolve => setTimeout(resolve, config.warmupTime));
+
+      await new Promise((resolve) => setTimeout(resolve, config.warmupTime));
 
       const result = await this.executeTest(testConfig);
-      
+
       await this.networkController.clearNetworkRules();
-      
-      await new Promise(resolve => setTimeout(resolve, config.cooldownTime));
+
+      await new Promise((resolve) => setTimeout(resolve, config.cooldownTime));
 
       this.results.push(result);
       return result;
-
     } catch (error) {
       console.error(`Test ${this.testId} failed:`, error);
       await this.networkController.clearNetworkRules();
@@ -53,7 +56,7 @@ class TestRunner {
         ...testConfig,
         success: false,
         error: error.message,
-        metrics: null
+        metrics: null,
       };
     }
   }
@@ -72,24 +75,21 @@ class TestRunner {
 
       presenterBrowser = await puppeteer.launch(config.browserSettings);
       browsers.push(presenterBrowser);
-      
+
       presenterPage = await presenterBrowser.newPage();
       pages.push(presenterPage);
+      
+      // THIS IS THE FIX: Go to the content page FIRST.
+      await presenterPage.goto(config.testContentUrl, { waitUntil: 'networkidle0' });
 
-      await presenterPage.goto(config.testContentUrl);
-      await presenterPage.waitForLoadState?.('networkidle') || new Promise(resolve => setTimeout(resolve, 1000));
+      // Then open a NEW TAB for the UI, and pass the autoStart params
+      const presenterControlPage = await presenterBrowser.newPage();
+      pages.push(presenterControlPage); // Also add this to pages to ensure it's closed
+      const presenterUrl = `${config.clientUrl}?sessionId=${sessionId}&role=presenter&mode=${testConfig.architecture}&autoStart=true`;
+      console.log(`Navigating presenter to: ${presenterUrl}`);
+      await presenterControlPage.goto(presenterUrl, { waitUntil: 'networkidle0' });
 
-      await presenterPage.goto(`${config.clientUrl}?sessionId=${sessionId}&role=presenter&mode=${testConfig.architecture}`);
-      await presenterPage.waitForLoadState?.('networkidle') || new Promise(resolve => setTimeout(resolve, 2000));
-
-      try {
-        await presenterPage.waitForSelector('button[type="submit"]', { timeout: 10000 });
-        await presenterPage.click('button[type="submit"]', { timeout: 15000 });
-      } catch (error) {
-        console.warn('UI interaction failed, simulating direct connection');
-      }
-      await new Promise(resolve => setTimeout(resolve, 3000));
-
+      // --- Setup Viewers ---
       for (let i = 0; i < testConfig.numViewers; i++) {
         const viewerBrowser = await puppeteer.launch(config.browserSettings);
         browsers.push(viewerBrowser);
@@ -97,19 +97,16 @@ class TestRunner {
         const viewerPage = await viewerBrowser.newPage();
         pages.push(viewerPage);
 
-        await viewerPage.goto(`${config.clientUrl}?sessionId=${sessionId}&role=viewer&mode=${testConfig.architecture}`);
-        await viewerPage.waitForLoadState?.('networkidle') || new Promise(resolve => setTimeout(resolve, 1000));
-
-        try {
-          await viewerPage.waitForSelector('button[type="submit"]', { timeout: 5000 });
-          await viewerPage.click('button[type="submit"]', { timeout: 10000 });
-        } catch (error) {
-          console.warn(`Viewer ${i+1} UI interaction failed, simulating connection`);
-        }
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        const viewerUrl = `${config.clientUrl}?sessionId=${sessionId}&role=viewer&mode=${testConfig.architecture}&autoStart=true`;
+        console.log(`Navigating viewer ${i + 1} to: ${viewerUrl}`);
+        await viewerPage.goto(viewerUrl, { waitUntil: 'networkidle0' });
       }
+      
+      console.log('All browsers navigated and auto-started. Waiting for connections...');
+      // Give all peers time to establish WebRTC connections
+      await new Promise(resolve => setTimeout(resolve, 5000)); 
 
-      console.log('All browsers connected, starting measurement...');
+      console.log("All browsers connected, starting measurement...");
 
       const measurementIntervals = [];
 
@@ -119,10 +116,13 @@ class TestRunner {
       measurementIntervals.push(cpuInterval);
 
       const latencyInterval = setInterval(async () => {
-        await metricsCollector.captureLatencyMetrics(presenterPage, 'presenter');
-        
+        await metricsCollector.captureLatencyMetrics(
+          presenterPage,
+          "presenter"
+        );
+
         if (pages.length > 1) {
-          await metricsCollector.captureLatencyMetrics(pages[1], 'viewer');
+          await metricsCollector.captureLatencyMetrics(pages[1], "viewer");
         }
       }, config.latencyMeasurementInterval);
       measurementIntervals.push(latencyInterval);
@@ -132,8 +132,8 @@ class TestRunner {
         if (pages.length > 1) {
           screenshotCounter++;
           await metricsCollector.captureScreenshotAndCalculateTLS(
-            pages[1], 
-            testConfig.testId, 
+            pages[1],
+            testConfig.testId,
             screenshotCounter
           );
         }
@@ -141,9 +141,9 @@ class TestRunner {
       measurementIntervals.push(screenshotInterval);
 
       console.log(`Running test for ${config.testDuration / 1000} seconds...`);
-      await new Promise(resolve => setTimeout(resolve, config.testDuration));
+      await new Promise((resolve) => setTimeout(resolve, config.testDuration));
 
-      measurementIntervals.forEach(interval => clearInterval(interval));
+      measurementIntervals.forEach((interval) => clearInterval(interval));
 
       const metrics = metricsCollector.exportResults();
 
@@ -152,32 +152,32 @@ class TestRunner {
         success: true,
         sessionId,
         metrics,
-        completedAt: Date.now()
+        completedAt: Date.now(),
       };
-
     } catch (error) {
-      console.error('Error during test execution:', error);
+      console.error("Error during test execution:", error);
       throw error;
     } finally {
-      console.log('Cleaning up browser instances...');
+      console.log("Cleaning up browser instances...");
       for (const browser of browsers) {
         try {
           await browser.close();
         } catch (error) {
-          console.error('Error closing browser:', error);
+          console.error("Error closing browser:", error);
         }
       }
     }
   }
 
   async runAllTests() {
-    console.log('Starting comprehensive test suite...');
-    
-    const totalTests = config.architectures.length * 
-                      config.numViewers.length * 
-                      config.packetLossRates.length * 
-                      config.bandwidthLimits.length;
-    
+    console.log("Starting comprehensive test suite...");
+
+    const totalTests =
+      config.architectures.length *
+      config.numViewers.length *
+      config.packetLossRates.length *
+      config.bandwidthLimits.length;
+
     console.log(`Total tests to run: ${totalTests}`);
 
     let completed = 0;
@@ -188,41 +188,45 @@ class TestRunner {
           for (const bandwidth of config.bandwidthLimits) {
             completed++;
             console.log(`\n*** Progress: ${completed}/${totalTests} ***`);
-            
+
             const result = await this.runSingleTest(
-              architecture, 
-              numViewers, 
-              packetLoss, 
+              architecture,
+              numViewers,
+              packetLoss,
               bandwidth
             );
 
             await this.saveIntermediateResults();
-            
-            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            await new Promise((resolve) => setTimeout(resolve, 2000));
           }
         }
       }
     }
 
-    console.log('\n=== Test Suite Complete ===');
+    console.log("\n=== Test Suite Complete ===");
     await this.saveResults();
     return this.results;
   }
 
   async saveResults() {
-    const resultsFile = path.join(config.resultsDir, 'results.json');
-    const csvFile = path.join(config.resultsDir, 'results.csv');
-    
-    await fs.writeJson(resultsFile, {
-      metadata: {
-        timestamp: Date.now(),
-        totalTests: this.results.length,
-        config: config
-      },
-      results: this.results
-    }, { spaces: 2 });
+    const resultsFile = path.join(config.resultsDir, "results.json");
+    const csvFile = path.join(config.resultsDir, "results.csv");
 
-    const csvData = this.results.map(result => ({
+    await fs.writeJson(
+      resultsFile,
+      {
+        metadata: {
+          timestamp: Date.now(),
+          totalTests: this.results.length,
+          config: config,
+        },
+        results: this.results,
+      },
+      { spaces: 2 }
+    );
+
+    const csvData = this.results.map((result) => ({
       testId: result.testId,
       architecture: result.architecture,
       numViewers: result.numViewers,
@@ -236,19 +240,24 @@ class TestRunner {
       maxCpu: result.metrics?.cpu.max || 0,
       avgTls: result.metrics?.tls.average || 1.0,
       minTls: result.metrics?.tls.min || 1.0,
-      timestamp: result.timestamp
+      timestamp: result.timestamp,
     }));
 
-    const csvHeader = Object.keys(csvData[0]).join(',') + '\n';
-    const csvContent = csvData.map(row => Object.values(row).join(',')).join('\n');
-    
+    const csvHeader = Object.keys(csvData[0]).join(",") + "\n";
+    const csvContent = csvData
+      .map((row) => Object.values(row).join(","))
+      .join("\n");
+
     await fs.writeFile(csvFile, csvHeader + csvContent);
 
     console.log(`Results saved to ${resultsFile} and ${csvFile}`);
   }
 
   async saveIntermediateResults() {
-    const intermediateFile = path.join(config.resultsDir, 'intermediate_results.json');
+    const intermediateFile = path.join(
+      config.resultsDir,
+      "intermediate_results.json"
+    );
     await fs.writeJson(intermediateFile, this.results, { spaces: 2 });
   }
 }
