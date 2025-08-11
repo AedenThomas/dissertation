@@ -32,8 +32,8 @@ services:
     build:
       context: ../sfu-server
       dockerfile: ../docker/Dockerfile.sfu
-      platforms:
-        - linux/amd64
+#      platforms:
+ #       - linux/amd64
     ports:
       - "3002:3002"
       - "10000-10100:10000-10100/udp"
