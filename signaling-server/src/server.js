@@ -157,6 +157,85 @@ io.on('connection', (socket) => {
     }
   });
 
+  // Handle WebRTC offer messages
+  socket.on('offer', (data) => {
+    try {
+      console.log(`📥 [Signaling] Received offer from ${socket.id} to ${data.toId}`);
+      
+      const client = sessionManager.clients.get(socket.id);
+      if (!client) {
+        console.error(`❌ [Signaling] Client ${socket.id} not found in session`);
+        socket.emit('error', { message: 'Client not in any session' });
+        return;
+      }
+
+      const forwardedData = {
+        fromId: socket.id,
+        description: data.description
+      };
+
+      io.to(data.toId).emit('offer', forwardedData);
+      console.log(`📤 [Signaling] Forwarded offer from ${socket.id} to ${data.toId}`);
+      
+    } catch (error) {
+      console.error('❌ [Signaling] Error handling offer:', error);
+      socket.emit('error', { message: 'Failed to process offer' });
+    }
+  });
+
+  // Handle WebRTC answer messages
+  socket.on('answer', (data) => {
+    try {
+      console.log(`📥 [Signaling] Received answer from ${socket.id} to ${data.toId}`);
+      
+      const client = sessionManager.clients.get(socket.id);
+      if (!client) {
+        console.error(`❌ [Signaling] Client ${socket.id} not found in session`);
+        socket.emit('error', { message: 'Client not in any session' });
+        return;
+      }
+
+      const forwardedData = {
+        fromId: socket.id,
+        description: data.description
+      };
+
+      io.to(data.toId).emit('answer', forwardedData);
+      console.log(`📤 [Signaling] Forwarded answer from ${socket.id} to ${data.toId}`);
+      
+    } catch (error) {
+      console.error('❌ [Signaling] Error handling answer:', error);
+      socket.emit('error', { message: 'Failed to process answer' });
+    }
+  });
+
+  // Handle ICE candidate messages
+  socket.on('ice-candidate', (data) => {
+    try {
+      console.log(`🧊 [Signaling] Received ICE candidate from ${socket.id} to ${data.toId}`);
+      
+      const client = sessionManager.clients.get(socket.id);
+      if (!client) {
+        console.error(`❌ [Signaling] Client ${socket.id} not found in session`);
+        socket.emit('error', { message: 'Client not in any session' });
+        return;
+      }
+
+      const forwardedData = {
+        fromId: socket.id,
+        candidate: data.candidate
+      };
+
+      io.to(data.toId).emit('ice-candidate', forwardedData);
+      console.log(`🧊 [Signaling] Forwarded ICE candidate from ${socket.id} to ${data.toId}`);
+      
+    } catch (error) {
+      console.error('❌ [Signaling] Error handling ICE candidate:', error);
+      socket.emit('error', { message: 'Failed to process ICE candidate' });
+    }
+  });
+
+  // Keep the generic signaling-message handler for backwards compatibility
   socket.on('signaling-message', (message) => {
     try {
       const { sessionId, toId, type, data } = message;

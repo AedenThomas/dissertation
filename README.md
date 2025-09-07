@@ -40,51 +40,92 @@ The system evaluates three critical metrics:
 
 ### Prerequisites
 
-- Docker and Docker Compose
-- Node.js 16+ (for local development)
+- Node.js 16+ (required for all services)
 - Python 3.9+ (for data analysis)
+- Docker and Docker Compose (optional, local development recommended)
 
-### 1. Clone and Setup
+### 1. Clone and Install Dependencies
 
 ```bash
 git clone <repository-url>
 cd webrtc-screen-sharing-evaluation
+
+# Install dependencies for all services
+npm install                    # Root dependencies
+cd signaling-server && npm install && cd ..
+cd sfu-server && npm install && cd ..
+cd client && npm install && cd ..
+cd test-framework && npm install && cd ..
 ```
 
-### 2. Build and Run Complete System
+### 2. Start Development Environment (Local Mode - Recommended)
 
+**Terminal 1: Start Signaling Server**
 ```bash
-# Build all containers and start services
-npm run start:dev
-
-# This will start:
-# - Client application at http://localhost:3000
-# - Signaling server at http://localhost:3001
-# - SFU server at http://localhost:3002
-# - Test framework (ready to run)
+cd signaling-server
+npm start
+# Server will run on http://localhost:3001
 ```
 
-### 3. Run Automated Experiments
+**Terminal 2: Start SFU Server**
+```bash
+cd sfu-server  
+npm start
+# Server will run on http://localhost:3002
+```
+
+**Terminal 3: Start React Client**
+```bash
+cd client
+npm start
+# Application will open at http://localhost:3000
+```
+
+### 3. Test the System
+
+1. Open your browser to `http://localhost:3000`
+2. Select "Presenter (Share Screen)" role
+3. Choose "Peer-to-Peer (P2P)" or "SFU" mode
+4. Click "Generate" to create a session ID
+5. Click "Start Sharing Session"
+6. Grant browser screen sharing permission when prompted
+7. On macOS: First allow browser permission, then select screen in system dialog
+
+### 4. Add Viewers (Optional)
+
+1. Open new browser tabs/windows to `http://localhost:3000`
+2. Select "Viewer" role
+3. Enter the same session ID from step 3 above
+4. Click "Join Session" to view the shared screen
+
+### 5. Run Automated Tests
 
 ```bash
-# Run complete test suite (all parameter combinations)
+cd test-framework
+npm test
+```
+
+### 6. Generate Analysis Charts
+
+```bash
+cd data-analysis
+pip install -r requirements.txt
+python analyze.py
+```
+
+## 🐳 Docker Alternative (Optional)
+
+If you prefer Docker (note: may have resource constraints):
+
+```bash
+# Start all services with Docker Compose
+docker-compose -f docker/docker-compose.yml up --build
+
+# Run tests
 docker-compose -f docker/docker-compose.yml run test-framework npm test
-
-# Run single test for debugging
-docker-compose -f docker/docker-compose.yml run test-framework npm run single-test P2P 5 0 5mbit
 ```
 
-### 4. Generate Visualizations
-
-```bash
-# Analyze results and generate charts
-docker-compose -f docker/docker-compose.yml run data-analysis python analyze.py
-
-# Generate sample data for testing
-docker-compose -f docker/docker-compose.yml run data-analysis python generate_sample_data.py
-```
-
-## 📁 Project Structure
+## � Project Structure
 
 ```
 .
@@ -125,7 +166,7 @@ docker-compose -f docker/docker-compose.yml run data-analysis python generate_sa
     └── Dockerfile.*       # Individual service containers
 ```
 
-## 🔬 Experimental Design
+## �🔬 Experimental Design
 
 ### Independent Variables
 
